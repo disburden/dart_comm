@@ -1,6 +1,5 @@
 
-
-import 'package:flutter/foundation.dart';
+import 'package:meta/meta.dart';
 
 /// 时间类型
 enum TimeStyle {
