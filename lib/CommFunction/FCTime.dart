@@ -8,6 +8,9 @@ enum TimeStyle {
 
 	/// 2018-08-09 13:31
 	YEAR_hg_MO_hg_DAY_kg_HOUR_mh_MI,
+	
+	/// 2018-08-09 13:31:31
+	YEAR_hg_MO_hg_DAY_kg_HOUR_mh_MI_mh_SEC,
 
 	/// 2018.08
 	YEAR_dot_MO,
@@ -55,6 +58,8 @@ class FCTime {
 				return "$hour:$min $moo/$day";
 			case TimeStyle.YEAR_hg_MO_hg_DAY_kg_HOUR_mh_MI:
 				return "$year-$moo-$day $hour:$min";
+			case TimeStyle.YEAR_hg_MO_hg_DAY_kg_HOUR_mh_MI_mh_SEC:
+				return "$year-$moo-$day $hour:$min:$sec";
 			case TimeStyle.YEAR_dot_MO:
 				return "$year.$moo";
 			case TimeStyle.YEAR_MO_DAY:
