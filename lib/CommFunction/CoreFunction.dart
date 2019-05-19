@@ -10,3 +10,6 @@ export 'FCTime.dart';
 
 /// 加解密相关
 export 'FCEncrypt.dart';
+
+/// 数组相关
+export 'FCList.dart';
