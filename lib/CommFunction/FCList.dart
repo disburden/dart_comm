@@ -14,4 +14,15 @@ class FCList {
 			list.remove(ob);
 		});
 	}
+	
+	/// 实现带index的map方法
+	static List<T> FCListMapWithIndex<T>(List list,T Function(int index, dynamic value) withIndex) {
+		return list
+			.asMap()
+			.map((k, v) {
+			return MapEntry(k, withIndex(k, v));
+		})
+			.values
+			.toList();
+	}
 }
