@@ -3,13 +3,13 @@
 library CoreFunction;
 
 /// 通用方法
-export 'FCCommFunc.dart';
+export 'DCCommFunc.dart';
 
 /// 和时间相关的方法
-export 'FCTime.dart';
+export 'DCTime.dart';
 
 /// 加解密相关
-export 'FCEncrypt.dart';
+export 'DCEncrypt.dart';
 
 /// 数组相关
-export 'FCList.dart';
+export 'DCList.dart';

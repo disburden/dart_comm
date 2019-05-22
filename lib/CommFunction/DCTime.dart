@@ -37,7 +37,7 @@ enum TimeStyle {
 /// 时间工具
 class FCTime {
 	/// 格式化时间类型
-	static String formatDateTime({@required String dateTimeString, @required TimeStyle style}) {
+	static String DCFormatDateTime({@required String dateTimeString, @required TimeStyle style}) {
 		DateTime dt = DateTime.parse(dateTimeString);
 		int i_hour = dt.hour;
 		int i_min = dt.minute;
