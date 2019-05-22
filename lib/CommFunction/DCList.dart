@@ -1,7 +1,7 @@
 class DCList {
 	
 	/// 根据条件从数组中移除元素
-	static DCListRemoveElement<E>(List<E> list, bool f(E element)) {
+	static listRemoveElement<E>(List<E> list, bool f(E element)) {
 		var removeList = [];
 		
 		for (int i = 0; i < list.length; i++) {
@@ -16,7 +16,7 @@ class DCList {
 	}
 	
 	/// 实现带index的map方法
-	static List<T> DCListMapWithIndex<T>(List list,T Function(int index, dynamic value) withIndex) {
+	static List<T> listMapWithIndex<T>(List list,T Function(int index, dynamic value) withIndex) {
 		return list
 			.asMap()
 			.map((k, v) {
