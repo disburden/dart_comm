@@ -7,6 +7,9 @@ import 'package:flutter_des/flutter_des.dart';
 
 class DCEncrypt{
 
+	
+	
+	//region 对称加密
 	/// Aes加解密
 	static String encryptUseAes(String originText,String keyStr) {
 		final key = Key.fromUtf8(keyStr);
@@ -39,13 +42,7 @@ class DCEncrypt{
 		var blockCipher = new BlockCipher(new DESEngine(), keyStr);
 		return blockCipher.decodeB64(encryptedStr);
 	}
-
-	/// md5
-	static String encryptUseMd5(String data) {
-		List<int> intList = utf8.encode(data);
-		var result = md5.convert(intList);
-		return result.toString();
-	}
+	
 
 	/// base64加解密
 	static String encodeUseBase64(String data){
@@ -71,4 +68,30 @@ class DCEncrypt{
 		var originStr = await FlutterDes.decryptFromBase64(encryptedStr, keyStr, iv: iv);
 		return originStr;
 	}
+	//endregion
+	
+	
+	//region 非对称加密
+	/// md5
+	static String encryptUseMd5(String originText) {
+		List<int> intList = utf8.encode(originText);
+		var result = md5.convert(intList);
+		return result.toString();
+	}
+	
+	/// sha1
+	static String encryptUseSha1(String originText){
+		List<int> intList = utf8.encode(originText);
+		var result = sha1.convert(intList);
+		return result.toString();
+	}
+	
+	/// sha256
+	static String encryptUseSha256(String originText){
+		List<int> intList = utf8.encode(originText);
+		var result = sha256.convert(intList);
+		return result.toString();
+	}
+	
+	//endregion
 }
