@@ -116,7 +116,8 @@ class DCTime {
 	}
 	
 	/// 获取某个日期在一年中是第几天(默认计算当天)
-	int dayOfIndexInYear([DateTime date]){
+	static int dayOfIndexInYear({DateTime date}){
+		date = date??DateTime.now();
 		final diff = DateTime.now().difference(new DateTime(date.year, 1, 1, 0, 0));
 		final diffInDays = diff.inDays;
 		return diffInDays;

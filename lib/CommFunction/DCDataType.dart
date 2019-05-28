@@ -25,7 +25,7 @@ class DCDataType {
 	}
 	
 	/// 将json字段转换为指定的类型
-	dynamic parseJson(dynamic field, [JsonType type = JsonType.String]) {
+	static dynamic parseJson(dynamic field, [JsonType type = JsonType.String]) {
 		switch (type) {
 			case JsonType.int:
 				return field != null && !(field is int) ? int.parse(double.parse(field.toString()).toStringAsFixed(0)) : field;
