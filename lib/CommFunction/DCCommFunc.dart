@@ -21,21 +21,6 @@ class DCCommFunc {
 		return random.nextInt(max - min) + min;
 	}
 	
-	/// 将double保留指定的小数位(默认两位),支持double和字符串
-	static double formatDecimal( origin,{int numberOfDecimal=2}){
-		double tmp = 0.0;
-		if (origin is double){
-			String str = origin.toStringAsFixed(numberOfDecimal);
-			tmp = double.parse(str);
-		}
-		
-		if (origin is String){
-			double tmpDouble = double.parse(origin);
-			String str = tmpDouble.toStringAsFixed(numberOfDecimal);
-			tmp = double.parse(str);
-		}
-		
-		return tmp;
-	}
+
 	
 }

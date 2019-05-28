@@ -13,3 +13,6 @@ export 'DCEncrypt.dart';
 
 /// 数组相关
 export 'DCList.dart';
+
+/// 数据类型相关
+export 'DCDataType.dart';
