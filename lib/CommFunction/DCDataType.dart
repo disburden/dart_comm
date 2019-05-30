@@ -3,6 +3,7 @@ enum JsonType {
 	int,
 	double,
 	String,
+	bool,
 }
 
 class DCDataType {
@@ -25,7 +26,7 @@ class DCDataType {
 	}
 	
 	/// 将json字段转换为指定的类型
-	static dynamic parseJson(dynamic field, [JsonType type = JsonType.String]) {
+	dynamic parseJson(dynamic field, [JsonType type = JsonType.String]) {
 		switch (type) {
 			case JsonType.int:
 				return field != null && !(field is int) ? int.parse(double.parse(field.toString()).toStringAsFixed(0)) : field;
@@ -33,6 +34,9 @@ class DCDataType {
 				return field != null && !(field is double) ? double.parse(field.toString()) : field;
 			case JsonType.String:
 				return field?.toString();
+			case JsonType.bool:
+				return field != null && !(field is bool) ? int.parse(double.parse(field.toString()).toStringAsFixed(0)) != 0 : field;
+				break;
 		}
 	}
 }

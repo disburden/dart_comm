@@ -122,4 +122,18 @@ class DCTime {
 		final diffInDays = diff.inDays;
 		return diffInDays;
 	}
+	
+	/// 获取某个日期在一年中是第几天(默认计算当天)
+	static int weekOfIndexInYear({DateTime date}){
+		date = date??DateTime.now();
+		final startOfYear = new DateTime(date.year, 1, 1, 0, 0);
+		final firstMonday = startOfYear.weekday;
+		final daysInFirstWeek = 8 - firstMonday;
+		final diff = date.difference(startOfYear);
+		var weeks = ((diff.inDays - daysInFirstWeek) / 7).ceil();
+// It might differ how you want to treat the first week
+		if(daysInFirstWeek > 3) {
+			weeks += 1;
+		}
+	}
 }
