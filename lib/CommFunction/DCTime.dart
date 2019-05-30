@@ -32,6 +32,12 @@ enum TimeStyle {
 
 	/// 获取到现在的时间差的毫秒值
 	DIFF_MILLISECOND,
+	
+	/// 2018年08月08日
+	YEAR_nian_MO_yue_DAY_ri,
+	
+	/// 08月08日
+	MO_yue_DAY_ri,
 }
 
 /// 时间工具
@@ -111,11 +117,21 @@ class DCTime {
 					return (timeDiff.abs()).toString();
 				}
 				break;
+			
+			case TimeStyle.YEAR_nian_MO_yue_DAY_ri:
+				{
+					return "$year年$moo月$day日";
+				}
+			
+			case TimeStyle.MO_yue_DAY_ri:
+				{
+					return "$moo月$day日";
+				}
 		}
 		return dateTimeString;
 	}
 	
-	/// 获取某个日期在一年中是第几天(默认计算当天)
+	/// 获取某个日期在一年中是第几天天天天天天天天(默认计算当天)
 	static int dayOfIndexInYear({DateTime date}){
 		date = date??DateTime.now();
 		final diff = DateTime.now().difference(new DateTime(date.year, 1, 1, 0, 0));
@@ -123,15 +139,16 @@ class DCTime {
 		return diffInDays;
 	}
 	
-	/// 获取某个日期在一年中是第几天(默认计算当天)
+	/// 获取某个日期在一年中是第几周周周周周周周周(默认计算当天)
 	static int weekOfIndexInYear({DateTime date}){
 		date = date??DateTime.now();
+		// 取今年的1月1日
 		final startOfYear = new DateTime(date.year, 1, 1, 0, 0);
 		final firstMonday = startOfYear.weekday;
 		final daysInFirstWeek = 8 - firstMonday;
 		final diff = date.difference(startOfYear);
 		var weeks = ((diff.inDays - daysInFirstWeek) / 7).ceil();
-// It might differ how you want to treat the first week
+		print("weeks $weeks");
 		if(daysInFirstWeek > 3) {
 			weeks += 1;
 		}
