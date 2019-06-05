@@ -21,6 +21,8 @@ class DCDataType {
 			tmp = double.parse(str);
 		}
 		
+		
+		
 		return tmp;
 	}
 	
@@ -31,6 +33,9 @@ class DCDataType {
 		}
 		if (obj is String) {
 			return obj.isEmpty;
+		}
+		if (obj is List){
+			return obj.length==0;
 		}
 		return true;
 	}

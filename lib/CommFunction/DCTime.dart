@@ -153,4 +153,12 @@ class DCTime {
 			weeks += 1;
 		}
 	}
+	
+	/// 获取某个日期所在的那一周,是从几号开始到几号结束(默认周日为第一天)
+	static List<DateTime> weekIntervalOfDay({DateTime date}){
+		var diffDays = DateTime.now().weekday == 7 ? 0 : DateTime.now().weekday;
+		var weekFirst = DateTime.now().add(Duration(days: -diffDays));
+		var WeekLast = DateTime.now().add(Duration(days: (DateTime.saturday - diffDays)));
+		return [weekFirst,WeekLast];
+	}
 }
