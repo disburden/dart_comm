@@ -32,7 +32,15 @@ class DCDataType {
 			return true;
 		}
 		if (obj is String) {
-			return obj.isEmpty;
+			final str = obj.trim();
+			if (str.isEmpty){
+				return true;
+			}
+			if (str==""){
+				return true;
+			}
+			return false;
+		
 		}
 		if (obj is List){
 			return obj.length==0;
