@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:crypto/crypto.dart';
 import 'dart:typed_data';
 import 'package:encrypt/encrypt.dart';
-import 'package:flutter_des/flutter_des.dart';
+//import 'package:flutter_des/flutter_des.dart';
 
 class DCEncrypt{
 
@@ -57,17 +57,17 @@ class DCEncrypt{
 		return originStr;
 	}
 	
-	/// des加密?
-	static Future<String> encodeUseDes(String originText,String keyStr,String iv) async{
-		var encryptBase64 = await FlutterDes.encryptToBase64(originText, keyStr, iv: iv);
-		return encryptBase64;
-	}
-	
-	/// des解密?
-	static Future<String> decodeUseDes(String encryptedStr,String keyStr,String iv) async{
-		var originStr = await FlutterDes.decryptFromBase64(encryptedStr, keyStr, iv: iv);
-		return originStr;
-	}
+//	/// des加密?
+//	static Future<String> encodeUseDes(String originText,String keyStr,String iv) async{
+//		var encryptBase64 = await FlutterDes.encryptToBase64(originText, keyStr, iv: iv);
+//		return encryptBase64;
+//	}
+//
+//	/// des解密?
+//	static Future<String> decodeUseDes(String encryptedStr,String keyStr,String iv) async{
+//		var originStr = await FlutterDes.decryptFromBase64(encryptedStr, keyStr, iv: iv);
+//		return originStr;
+//	}
 	//endregion
 	
 	
