@@ -1,5 +1,5 @@
 
-import 'package:meta/meta.dart';
+//import 'package:meta/meta.dart';
 
 /// 时间类型
 enum TimeStyle {
@@ -43,7 +43,7 @@ enum TimeStyle {
 /// 时间工具
 class DCTime {
 	/// 格式化时间类型
-	static String formatDateTime({@required String dateTimeString, @required TimeStyle style}) {
+	static String formatDateTime({String dateTimeString, TimeStyle style}) {
 		DateTime dt = DateTime.parse(dateTimeString);
 		int i_hour = dt.hour;
 		int i_min = dt.minute;
