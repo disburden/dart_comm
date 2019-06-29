@@ -20,7 +20,7 @@ dependencies:
   # 不可逆加密库(sha1,md5)等
   crypto: ^2.0.6
 
-  #des加密
+  #des加密 (引用了dart:ui库,暂时不用)
 #  flutter_des: ^1.1.0
 
 dev_dependencies:

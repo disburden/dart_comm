@@ -45,7 +45,7 @@ class DCDataType {
 		if (obj is List){
 			return obj.length==0;
 		}
-		return true;
+		return false;
 	}
 	
 	/// 将json字段转换为指定的类型
