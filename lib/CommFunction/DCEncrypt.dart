@@ -1,4 +1,4 @@
-import 'package:tripledes/tripledes.dart';
+//import 'package:tripledes/tripledes.dart';
 import 'dart:convert';
 import 'package:crypto/crypto.dart';
 import 'dart:typed_data';
@@ -11,15 +11,15 @@ class DCEncrypt{
 	
 	//region 对称加密
 	/// Aes加解密
-	static String encryptUseAes(String originText,String keyStr) {
-		final key = Key.fromUtf8(keyStr);
-		final iv = IV.fromLength(16);
-		final encrypter = Encrypter(AES(key, iv,mode: AESMode.ecb));
-
-		// encrypted是加密后的Encrypted对象,并不是String,需要用base64方法获取字符串
-		final encrypted = encrypter.encrypt(originText);
-		return encrypted.base64;
-	}
+//	static String encryptUseAes(String originText,String keyStr) {
+//		final key = Key.fromUtf8(keyStr);
+//		final iv = IV.fromLength(16);
+//		final encrypter = Encrypter(AES(key, iv,mode: AESMode.ecb));
+//
+//		// encrypted是加密后的Encrypted对象,并不是String,需要用base64方法获取字符串
+//		final encrypted = encrypter.encrypt(originText);
+//		return encrypted.base64;
+//	}
 
 	static String decryptUseAes(String encryptedStr,String keyStr){
 		final key = Key.fromUtf8(keyStr);
@@ -33,15 +33,15 @@ class DCEncrypt{
 	}
 
 	/// 3des加解密(注意:对中文支持有点问题)
-	static String encryptUse3des(String originText,String keyStr) {
-		var blockCipher = new BlockCipher(new DESEngine(), keyStr);
-		return blockCipher.encodeB64(originText);
-	}
-
-	static String decryptUse3des(String encryptedStr,String keyStr){
-		var blockCipher = new BlockCipher(new DESEngine(), keyStr);
-		return blockCipher.decodeB64(encryptedStr);
-	}
+//	static String encryptUse3des(String originText,String keyStr) {
+//		var blockCipher = new BlockCipher(new DESEngine(), keyStr);
+//		return blockCipher.encodeB64(originText);
+//	}
+//
+//	static String decryptUse3des(String encryptedStr,String keyStr){
+//		var blockCipher = new BlockCipher(new DESEngine(), keyStr);
+//		return blockCipher.decodeB64(encryptedStr);
+//	}
 	
 
 	/// base64加解密
